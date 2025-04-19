@@ -1,0 +1,10 @@
+package DesignPatterns.factorypatterns;
+
+import java.util.Map;
+
+public class CarFactory extends VehicleFactory{
+  @Override
+  protected Vehicle createVehicle(Map<String, String> propertyMap) {
+    return new Bike(propertyMap);
+  }
+}
