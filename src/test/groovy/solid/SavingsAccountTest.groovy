@@ -31,7 +31,7 @@ class SavingsAccountTest {
     @Test
     void 'test withdrawal exceeding balance throws exception'() {
         def account = new SavingsAccount(200.0)
-        def exception = assertThrows(IllegalArgumentException.class, () -> {
+        def exception = assertThrows(InsufficientFundsException.class, () -> {
             account.withdraw(200.01)
         })
         assertEquals("Insufficient funds for withdrawal", exception.message)

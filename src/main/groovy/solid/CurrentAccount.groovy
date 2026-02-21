@@ -35,13 +35,19 @@ class CurrentAccount implements WithdrawableAccount {
         this.currentBalance += amount
     }
 
+    /**
+     * Withdraws a specified amount from the account, taking into account the overdraft limit.
+     *
+     * @param amount the amount to withdraw
+     * @throws InsufficientFundsException if the current balance plus overdraft limit is less than the withdrawal amount
+     */
     @Override
-    void withdraw(double amount) {
+    void withdraw(double amount) throws InsufficientFundsException {
         if (amount <= 0) {
             throw new IllegalArgumentException("Withdrawal amount must be positive")
         }
         if (this.currentBalance + this.overdraftLimit < amount) {
-            throw new IllegalArgumentException("Insufficient funds, including overdraft limit")
+            throw new InsufficientFundsException("Insufficient funds, including overdraft limit")
         }
         this.currentBalance -= amount
     }

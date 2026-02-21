@@ -8,6 +8,10 @@ public class WithdrawalService {
     }
 
     public void withdraw(double amount) {
-        account.withdraw(amount);
+        try {
+            account.withdraw(amount);
+        } catch (InsufficientFundsException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

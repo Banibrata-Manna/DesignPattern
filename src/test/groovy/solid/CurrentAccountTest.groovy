@@ -42,7 +42,7 @@ class CurrentAccountTest {
         def account = new CurrentAccount(100.0)
         account.overdraftLimit = 500.0
         // Max possible withdrawal is 100 + 500 = 600
-        def exception = assertThrows(IllegalArgumentException.class, () -> {
+        def exception = assertThrows(InsufficientFundsException.class, () -> {
             account.withdraw(600.01)
         })
         assertEquals("Insufficient funds, including overdraft limit", exception.message)
