@@ -1,23 +1,22 @@
-package DesignPatterns.factorypatterns;
+package factory;
 
 import java.util.Map;
 
-public class Bike implements Vehicle{
+public class Car implements Vehicle{
   private final Map<String, String> properties;
 
-  public Bike(Map<String, String> properties){
+  public Car(Map<String, String> properties) {
     this.properties = properties;
   }
 
   @Override
   public void build() {
-    System.out.println("Built Bike");
-
+    System.out.println("Car Built");
   }
 
   @Override
   public String toString() {
-    return "Bike{" +
+    return "Car{" +
         "properties=" + properties +
         '}';
   }
