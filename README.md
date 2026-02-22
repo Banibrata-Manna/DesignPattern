@@ -6,3 +6,4 @@
     - [Liskov Substitution](https://www.baeldung.com/java-liskov-substitution-principle)
     - [Interface Segregation](https://www.baeldung.com/solid-principles#i)
     - [Dependency Inversion](https://www.baeldung.com/solid-principles#d)
+
